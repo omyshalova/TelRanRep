@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -15,6 +17,14 @@ public class Index {
     public void setUp() {
         wd = new ChromeDriver();
         wd.get("file:///C:/Users/Olga%20Myshalova/Downloads/21.index.html");
+
+
+    }
+
+    @Test
+    public void tabelTest(){
+        WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3) td:last-child"));
+        Assert.assertEquals(canada.getText(), "Canada");
     }
 
 
@@ -70,6 +80,11 @@ public class Index {
         WebElement a4  = wd.findElement(By.partialLinkText("m 1"));
 
 
+    }
+
+    @AfterClass
+    public void close() {
+        wd.close();
     }
 
 

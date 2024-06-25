@@ -47,6 +47,16 @@ public class Index {
 
         //by attribute
         WebElement inputName = wd.findElement(By.cssSelector("[placeholder='Type your name']"));
+            //start
+        WebElement imputName1 = wd.findElement(By.cssSelector("[placeholder^='Type']"));
+            //end
+        WebElement imputName2 = wd.findElement(By.cssSelector("[placeholder$='name']"));
+            //contains
+        WebElement inputName3  = wd.findElement(By.cssSelector("[placehulder*='your']"));
+
+
+
+
         WebElement a2 = wd.findElement(By.cssSelector("[href='#item3']"));
 
 
